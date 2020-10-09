@@ -1,4 +1,4 @@
-@extends('layouts.login')
+@extends('Blood_bank.resources.views.layouts.login')
 
 @section('content')
     <div class="row justify-content-center">
@@ -15,8 +15,8 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
-                                @include('admin.includes.alerts.errors')
-                                @include('admin.includes.alerts.success')
+                                @include('Blood_bank.resources.views.admin.includes.alerts.errors')
+                                @include('Blood_bank.resources.views.admin.includes.alerts.success')
                                 <form class="user" action="" method="POST">
                                     @csrf
                                     <div class="form-group">

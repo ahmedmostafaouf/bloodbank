@@ -13,7 +13,7 @@ class CreateSettingsTable extends Migration {
 			$table->text('notification_setting_text');
 			$table->string('about_app');
 			$table->string('long_desc');
-			$table->string('short_desc');
+			$table->string('small_desc');
 			$table->string('phone');
 			$table->string('email');
 			$table->string('fb_url');

@@ -60,11 +60,14 @@
                     </div>
                 </div>
                 <div class="slick2">
-                    @foreach($posts as $post)
+                    @foreach($posts  as $post)
                     <div class="slick-cont">
                         <div class="card">
+                            <div class="heart-icon"><i id="{{$post->id}}" class=" {{$post->is_favourite ? 'fas' : 'far'}} fa-heart
+                                    "></i>
+                            </div>
                             <img src="{{$post->photo}}" class="card-img-top" alt="slick-img" style="width:330px;height: 200px; ">
-                            <div class="heart-icon"><i class="far fa-heart"></i></div>
+
                             <div class="card-body">
                                 <h5 class="card-title">{{$post->title}}</h5>
                                 <p>{{ mb_substr($post ->contents,0,70)}} ......
@@ -130,6 +133,7 @@
             </div>
             <!--End container-->
         </div>
+        </div>
         <!--End Donation-request-->
     </section>
     <!--End Donation-->
@@ -169,6 +173,31 @@
         </div>
         <!--End container-->
     </section>
+    @push('scripts')
+        <script>
+
+            $('.heart-icon').click(function() {
+                var icon = $(this).find('i');
+                let heart = event.target
+                console.log(heart)
+                var post_id = heart.id;
+                // alert(post_id)
+                $.ajax({
+                    url : '{{url(route('toggle-favourite'))}}',
+                    type: 'post',
+                    data : { _token : "{{csrf_token()}}" , post_id : post_id },
+                    success :function (data) {
+                        console.log(data);
+                        if ($(icon).hasClass('fas')) {
+                            $(icon).removeClass('fas').addClass('far');
+                        } else {
+                            $(icon).removeClass('far').addClass('fas');
+                        }
+                    }
+                })
+            });
+        </script>
+    @endpush
     <!--End blood-app-->
 
 

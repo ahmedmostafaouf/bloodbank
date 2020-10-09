@@ -30,6 +30,24 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
+                                <label for="#about">وصف كبير عن التطبيق  </label>
+                                <textarea class="form-control" id="about" rows="3" name="long_desc" >{{$settings->long_desc}}</textarea>
+                                @error("long_desc")
+                                <span class="text-danger">{{$message}} </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="#about"> وصف صفير عن التطبيق  </label>
+                                <textarea class="form-control" id="about" rows="3" name="small_desc" >{{$settings->small_desc}}</textarea>
+                                @error("small_desc")
+                                <span class="text-danger">{{$message}} </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
                                 <label>رابط الفيس </label>
                                 <input class="form-control" type="text" name="fb_url" value="{{$settings->fb_url}}">
                                 @error("fb_url")

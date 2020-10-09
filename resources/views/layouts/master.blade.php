@@ -55,6 +55,7 @@
 <script src="{{asset('assets/front/js/popper.min.js')}}"></script>
 <script src="{{asset('assets/front/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('assets/front/js/main.js')}}"></script>
+@stack('scripts')
 </body>
 
 </html>

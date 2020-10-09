@@ -20,7 +20,9 @@ class CreateClientsTable extends Migration {
 			$table->integer('pin_code');
 			$table->integer('city_id')->unsigned();
 			$table->integer('governorate_id')->unsigned();
-		});
+            $table->tinyInteger('status');
+
+        });
 	}
 
 	public function down()

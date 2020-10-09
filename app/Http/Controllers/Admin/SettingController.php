@@ -18,7 +18,7 @@ class SettingController extends Controller
 
     public function edit($id)
     {
-         $settings=Setting::select('id','about_app','phone','email','fb_url','tw_url','insta_url','youtube_url')->find($id);
+         $settings=Setting::select('id','about_app','long_desc','small_desc','phone','email','fb_url','tw_url','insta_url','youtube_url')->find($id);
         if(!$settings){
             return  redirect()->route('setting.index')->with(['error'=>"هذه المحافظه ليست موجوده او ربما قام احد بحذفها"]);
         }
@@ -28,7 +28,7 @@ class SettingController extends Controller
 
     public function update(SettingRequest $request, $id)
     {
-        $settings=Setting::select('id','about_app','phone','email','fb_url','tw_url','insta_url','youtube_url')->find($id);
+        $settings=Setting::select('id','about_app','long_desc','small_desc','phone','email','fb_url','tw_url','insta_url','youtube_url')->find($id);
         if(!$settings){
             return  redirect()->route('setting.index')->with(['error'=>"هذه المحافظه ليست موجوده او ربما قام احد بحذفها"]);
         }

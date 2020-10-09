@@ -31,13 +31,13 @@
                         </a>
                         <div class="dropdown-menu text-right" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{route('client-home')}}"> <i class="fas fa-home ml-2"></i>الرئيسيه</a>
-                            <a class="dropdown-item" href="#"> <i class="fas fa-user-alt ml-2"></i>معلوماتى</a>
+                            <a class="dropdown-item" href="{{route('get.client.profile')}}"> <i class="fas fa-user-alt ml-2"></i>معلوماتى</a>
                             <a class="dropdown-item" href="#"> <i class="fas fa-bell ml-2"></i>اعدادات الاشعارات</a>
-                            <a class="dropdown-item" href="#"> <i class="far fa-heart ml-2"></i>المفضلة</a>
+                            <a class="dropdown-item" href="{{route('get.post.fav')}}"> <i class="far fa-heart ml-2"></i>المفضلة</a>
                             <a class="dropdown-item" href="#"> <i class="far fa-comments ml-2"></i>ابلاغ</a>
-                            <a class="dropdown-item" href="contact.html"> <i class="fas fa-phone ml-2"></i>تواصل
+                            <a class="dropdown-item" href="{{route('contact.me')}}"> <i class="fas fa-phone ml-2"></i>تواصل
                                 معنا</a>
-                            <a class="dropdown-item" href="#"> <i class="fas fa-sign-out-alt ml-2"></i>خروج</a>
+                            <a class="dropdown-item" href="{{route('client-logout')}}"> <i class="fas fa-sign-out-alt ml-2"></i>خروج</a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                         <a class="nav-link" href="{{route('posts')}}">المقالات</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="donation.html">طلبات التبرع</a>
+                        <a class="nav-link" href="{{route('client.donation')}}">طلبات التبرع</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('about.us')}}">من نحن</a>
@@ -75,7 +75,7 @@
                         <a class="nav-link" href="contact.html">اتصل بنا</a>
                     </li>
                     @if(!auth()->guard('web')->check())
-                    <li class="mr-lg-auto"><a class="signin" href="signup.html">انشاء حساب جديد</a></li>
+                    <li class="mr-lg-auto"><a class="signin" href="{{route('get.front.register')}}">انشاء حساب جديد</a></li>
                     <li class="pr-3"><a class="btn bg" href="{{route('get.front.login')}}"> الدخول </a></li>
                     @endif
                 </ul>
